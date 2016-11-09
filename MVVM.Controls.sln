@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATZ.MVVM.Controls", "ATZ.MVVM.Controls\ATZ.MVVM.Controls.csproj", "{21308096-BD31-4AF2-B23C-0B2C0D2FDF09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATZ.MVVM.Controls.Wpf", "ATZ.MVVM.Controls.Wpf\ATZ.MVVM.Controls.Wpf.csproj", "{EDF10ECF-224B-48CE-80DC-A36E38B697FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWpfApplication", "TestWpfApplication\TestWpfApplication.csproj", "{263D028B-D474-4414-9096-D212DEE05C65}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21308096-BD31-4AF2-B23C-0B2C0D2FDF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21308096-BD31-4AF2-B23C-0B2C0D2FDF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21308096-BD31-4AF2-B23C-0B2C0D2FDF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21308096-BD31-4AF2-B23C-0B2C0D2FDF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF10ECF-224B-48CE-80DC-A36E38B697FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF10ECF-224B-48CE-80DC-A36E38B697FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF10ECF-224B-48CE-80DC-A36E38B697FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF10ECF-224B-48CE-80DC-A36E38B697FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{263D028B-D474-4414-9096-D212DEE05C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{263D028B-D474-4414-9096-D212DEE05C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{263D028B-D474-4414-9096-D212DEE05C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{263D028B-D474-4414-9096-D212DEE05C65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
