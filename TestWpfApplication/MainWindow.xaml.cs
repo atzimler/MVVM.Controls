@@ -28,10 +28,12 @@ namespace TestWpfApplication
             var stackPanelViewModel = new StackPanelViewModel();
             stackPanelViewModel.Children.Add(textBoxViewModel);
 
-            var windowViewModel = new WindowViewModel {Content = stackPanelViewModel};
+            // TODO: Paused for ATZ.MVVM 3.0
+            //var windowViewModel = new WindowViewModel {Content = stackPanelViewModel};
 
             var window = DependencyResolver.Instance.Get<IModalWindow<WindowViewModel>>();
-            window.SetViewModel(windowViewModel);
+            // TODO: Paused for ATZ.MVVM 3.0
+            //window.SetViewModel(windowViewModel);
 
             window.ShowDialog();
         }
