@@ -1,25 +1,27 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using ATZ.MVVM.Controls.FrameworkElement;
+using ATZ.MVVM.Controls.Panel;
 using ATZ.MVVM.ViewModels.Utility;
+using ATZ.MVVM.ViewModels.Utility.Connectors;
 
 namespace ATZ.MVVM.Controls.StackPanel
 {
-    public class StackPanelViewModel : BaseViewModel<StackPanelModel>
+    public class StackPanelViewModel : PanelViewModel, IViewModel<StackPanelModel>
     {
-        // TODO: Set correct type, paused for development of ATZ.MVVM 3.0
-        // TODO: Set correct encapsulation.
-        public ObservableCollection<object> Children { get; set; }
-
-        protected override void BindModel()
+        public StackPanelViewModel()
         {
+            Model = new StackPanelModel();
         }
 
-        protected override void UnbindModel()
+        public new StackPanelModel GetModel()
         {
+            return (StackPanelModel) Model;
         }
 
-        public override void UpdateValidity(object sender, EventArgs e)
+        public void SetModel(StackPanelModel model)
         {
+            Model = model;
         }
     }
 }

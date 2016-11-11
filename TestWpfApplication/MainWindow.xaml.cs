@@ -3,7 +3,6 @@ using ATZ.DependencyInjection;
 using ATZ.MVVM.Controls.StackPanel;
 using ATZ.MVVM.Controls.TextBox;
 using ATZ.MVVM.Controls.Window;
-using ATZ.MVVM.Controls.Wpf;
 using ATZ.MVVM.Views.Utility;
 using ATZ.MVVM.Views.Utility.Interfaces;
 using Ninject;
@@ -19,21 +18,23 @@ namespace TestWpfApplication
         {
             InitializeComponent();
 
-            Bindings.Initialize();
+            ATZ.MVVM.Controls.Wpf.Bindings.Initialize();
         }
 
         private void OnButtonClicked(object sender, RoutedEventArgs e)
         {
+            // TODO: This now works, except that it is rendered in size (0,0) because how the content is placed on the window. Probably need some additional features.
+
             var textBoxViewModel = new TextBoxViewModel();
             var stackPanelViewModel = new StackPanelViewModel();
             stackPanelViewModel.Children.Add(textBoxViewModel);
 
-            // TODO: Paused for ATZ.MVVM 3.0
-            //var windowViewModel = new WindowViewModel {Content = stackPanelViewModel};
-
             var window = DependencyResolver.Instance.Get<IModalWindow<WindowViewModel>>();
-            // TODO: Paused for ATZ.MVVM 3.0
-            //window.SetViewModel(windowViewModel);
+            var windowViewModel = new WindowViewModel { Content = stackPanelViewModel };
+            window.SetViewModel(windowViewModel);
+
+            //var windowViewModel = window.GetViewModel();
+            //windowViewModel.Content = stackPanelViewModel;
 
             window.ShowDialog();
         }

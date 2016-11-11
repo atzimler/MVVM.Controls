@@ -2,20 +2,19 @@
 using ATZ.DependencyInjection;
 using ATZ.MVVM.Controls.FrameworkElement;
 using ATZ.MVVM.Controls.Window;
+using ATZ.MVVM.ViewModels.Utility;
 using ATZ.MVVM.Views.Utility;
 using ATZ.MVVM.Views.Utility.Connectors;
 using ATZ.MVVM.Views.Utility.Interfaces;
 
 namespace ATZ.MVVM.Controls.Wpf
 {
-    using TContentConnector = CompositeViewToViewModelConnector<
-        WindowModel, WindowView, WindowViewModel,
-        FrameworkElementModel, IView<FrameworkElementViewModel>, FrameworkElementViewModel>;
+    using TContentConnector = CompositeViewToViewModelConnector<WindowModel, WindowView,FrameworkElementModel, IView<IViewModel<FrameworkElementModel>>>;
 
     /// <summary>
     /// Interaction logic for WindowView.xaml
     /// </summary>
-    public partial class WindowView : IModalWindow<WindowViewModel>
+    public partial class WindowView : IModalWindow<IViewModel<WindowModel>>
     {
         private TContentConnector _contentConnector;
 
@@ -24,18 +23,37 @@ namespace ATZ.MVVM.Controls.Wpf
         public WindowView()
         {
             InitializeComponent();
+
+            this.SetViewModel(new WindowViewModel());
         }
 
-        public void BindModel(WindowViewModel viewModel)
+        private IView<IViewModel<FrameworkElementModel>> CreateContentView(FrameworkElementViewModel contentViewModel)
         {
-            var content = DependencyResolver.Instance.GetInterface<IView<FrameworkElementViewModel>>(typeof(IView<>), viewModel.Content.GetType());
-            Content = content;
+            var contentViewModelType = contentViewModel?.GetType();
+            if (contentViewModelType == null)
+            {
+                return null;
+            }
 
+            return DependencyResolver.Instance.GetInterface<IView<IViewModel<FrameworkElementModel>>>(typeof(IView<>), contentViewModelType);
+        }
+
+        private static FrameworkElementViewModel GetContentViewModel(IViewModel<WindowModel> vm)
+        {
+            return ((WindowViewModel) vm).Content;
+        }
+
+        public void BindModel(IViewModel<WindowModel> viewModel)
+        {
+            var contentViewModel = GetContentViewModel(viewModel);
+            var contentView = CreateContentView(contentViewModel);
+            
             _contentConnector = new TContentConnector(
-                content,
+                contentView,
                 viewModel,
-                vm => vm.Content,
-                vm => vm.Model.Content);
+                GetContentViewModel,
+                vm => vm.GetModel().Content);
+
         }
 
         public void UnbindModel()

@@ -4,7 +4,7 @@ using ATZ.MVVM.ViewModels.Utility;
 
 namespace ATZ.MVVM.Controls.ContentControl
 {
-    public class ContentControlViewModel : BaseViewModel<ContentControlModel>
+    public class ContentControlViewModel : FrameworkElementViewModel
     {
         public FrameworkElementViewModel Content { get; set; }
 

@@ -35,20 +35,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ATZ.DependencyInjection, Version=1.1.1.14616, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ATZ.DependencyInjection.1.1.1.14616\lib\net452\ATZ.DependencyInjection.dll</HintPath>
+    <Reference Include="ATZ.DependencyInjection, Version=1.2.0.27094, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.DependencyInjection.1.2.0.27094\lib\net452\ATZ.DependencyInjection.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ATZ.MVVM, Version=2.2.1.12435, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ATZ.MVVM.2.2.1.12435\lib\net452\ATZ.MVVM.dll</HintPath>
+    <Reference Include="ATZ.DependencyInjection.System, Version=1.2.0.27095, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.DependencyInjection.System.1.2.0.27095\lib\net452\ATZ.DependencyInjection.System.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ATZ.MVVM.ViewModels.Utility, Version=2.2.1.12434, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ATZ.MVVM.2.2.1.12435\lib\net452\ATZ.MVVM.ViewModels.Utility.dll</HintPath>
+    <Reference Include="ATZ.MVVM, Version=3.0.0.28782, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.MVVM.3.0.0.28782\lib\net452\ATZ.MVVM.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ATZ.MVVM.Views.Utility, Version=2.2.1.12435, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ATZ.MVVM.2.2.1.12435\lib\net452\ATZ.MVVM.Views.Utility.dll</HintPath>
+    <Reference Include="ATZ.MVVM.ViewModels.Utility, Version=3.0.0.28781, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.MVVM.3.0.0.28782\lib\net452\ATZ.MVVM.ViewModels.Utility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ATZ.MVVM.Views.Utility, Version=3.0.0.28782, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.MVVM.3.0.0.28782\lib\net452\ATZ.MVVM.Views.Utility.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ATZ.Reflection, Version=1.2.0.14240, Culture=neutral, processorArchitecture=MSIL">
