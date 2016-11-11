@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using ATZ.MVVM.Controls.FrameworkElement;
 using ATZ.MVVM.ViewModels.Utility;
 using ATZ.MVVM.ViewModels.Utility.Connectors;

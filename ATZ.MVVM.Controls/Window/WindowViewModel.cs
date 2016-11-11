@@ -1,6 +1,5 @@
 ﻿using ATZ.MVVM.Controls.ContentControl;
 using ATZ.MVVM.ViewModels.Utility;
-using ATZ.MVVM.Views.Utility.Connectors;
 
 namespace ATZ.MVVM.Controls.Window
 {
