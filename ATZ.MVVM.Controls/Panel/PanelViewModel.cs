@@ -7,18 +7,18 @@ namespace ATZ.MVVM.Controls.Panel
 {
     public class PanelViewModel : FrameworkElementViewModel, IViewModel<PanelModel>
     {
-        internal ObservableCollection<IViewModel<FrameworkElementModel>> Children { get; } = new ObservableCollection<IViewModel<FrameworkElementModel>>();
-        public CollectionViewModelToModelConnector<FrameworkElementModel> ChildrenConnector { get; private set; }
+        internal ObservableCollection<IViewModel<FrameworkElementModel>> ChildCollection { get; } = new ObservableCollection<IViewModel<FrameworkElementModel>>();
+        public CollectionViewModelToModelConnector<FrameworkElementModel> Children { get; private set; }
 
 
         protected override void BindModel()
         {
             base.BindModel();
 
-            ChildrenConnector = new CollectionViewModelToModelConnector<FrameworkElementModel>
+            Children = new CollectionViewModelToModelConnector<FrameworkElementModel>
             {
                 ModelCollection = GetModel().Children,
-                ViewModelCollection = Children
+                ViewModelCollection = ChildCollection
             };
         }
 

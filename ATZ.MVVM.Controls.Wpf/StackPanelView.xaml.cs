@@ -26,7 +26,7 @@ namespace ATZ.MVVM.Controls.Wpf
         private void BindModelImplementation(IViewModel<StackPanelModel> vm)
         {
             StackPanelViewModel spvm = (StackPanelViewModel) vm;
-            _childrenConnector = new TChildrenConnector {ViewModelCollection = spvm.Children, ViewCollection = Children};
+            _childrenConnector = new TChildrenConnector {ViewModelCollection = spvm.ChildCollection, ViewCollection = Children};
         }
 
         public void BindModel(IViewModel<FrameworkElementModel> vm) => BindModelImplementation((IViewModel<StackPanelModel>)vm);
