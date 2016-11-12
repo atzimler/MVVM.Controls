@@ -31,9 +31,7 @@ namespace TestWpfApplication
             var textBoxViewModel = new TextBoxViewModel();
             var stackPanelViewModel = new StackPanelViewModel();
 
-            // TODO: If this works, this call can be simplyfied to be AddVM(VM) <-- it works because after this the Children of the Model and the VM are in sync.
-            // TODO: There should be a way to disable direct access from client code to internal API of StackPanelViewModel.Children.Add - probably through interface. Also in that case probably the Connector should be named as Children and the Collection as ChildCollection.
-            stackPanelViewModel.Children.Add(textBoxViewModel.Model, textBoxViewModel);
+            stackPanelViewModel.Children.Add(textBoxViewModel);
 
             // TODO: Verify that the Model, View and ViewModel structures are in sync after setting the Content of the VM (in that case just the M and VM structures) and after
             // setting the VM of the View. Currently it does not seem to be in sync.
