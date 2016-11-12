@@ -7,7 +7,7 @@ namespace ATZ.MVVM.Controls.Panel
 {
     public class PanelViewModel : FrameworkElementViewModel, IViewModel<PanelModel>
     {
-        public ObservableCollection<IViewModel<FrameworkElementModel>> Children { get; } = new ObservableCollection<IViewModel<FrameworkElementModel>>();
+        internal ObservableCollection<IViewModel<FrameworkElementModel>> Children { get; } = new ObservableCollection<IViewModel<FrameworkElementModel>>();
         public CollectionViewModelToModelConnector<FrameworkElementModel> ChildrenConnector { get; private set; }
 
 

@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -33,3 +34,9 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+// Allow Wpf controls to access the information necessary to bind the component view models to the component views.
+// While these need to be access by the appropriate views, they should not be part of the public API and as a result,
+// they are marked as being internal. The reason why Wpf is not in the same DLL is that this will allow us to
+// implement different UI control sets with reusing the Model and ViewModel codes.
+[assembly: InternalsVisibleTo("ATZ.MVVM.Controls.Wpf")]
