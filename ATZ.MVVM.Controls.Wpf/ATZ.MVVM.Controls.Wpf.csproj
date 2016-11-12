@@ -73,6 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bindings.cs" />
+    <Compile Include="DockPanelView.xaml.cs">
+      <DependentUpon>DockPanelView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StackPanelView.xaml.cs">
       <DependentUpon>StackPanelView.xaml</DependentUpon>
@@ -94,6 +97,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="DockPanelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StackPanelView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

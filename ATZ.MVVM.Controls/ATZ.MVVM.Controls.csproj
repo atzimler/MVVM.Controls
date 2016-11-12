@@ -73,6 +73,8 @@
     <Compile Include="ContentControl\ContentControlViewModel.cs" />
     <Compile Include="Control\ControlModel.cs" />
     <Compile Include="Control\ControlViewModel.cs" />
+    <Compile Include="DockPanel\DockPanelModel.cs" />
+    <Compile Include="DockPanel\DockPanelViewModel.cs" />
     <Compile Include="FrameworkElement\FrameworkElementModel.cs" />
     <Compile Include="FrameworkElement\FrameworkElementViewModel.cs" />
     <Compile Include="Panel\PanelModel.cs" />
