@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE.txt = LICENSE.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATZ.MVVM.Controls.Wpf.Tests", "ATZ.MVVM.Controls.Wpf.Tests\ATZ.MVVM.Controls.Wpf.Tests.csproj", "{C11C61F8-5A8B-411C-9402-B707F7675983}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{263D028B-D474-4414-9096-D212DEE05C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{263D028B-D474-4414-9096-D212DEE05C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{263D028B-D474-4414-9096-D212DEE05C65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C11C61F8-5A8B-411C-9402-B707F7675983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C11C61F8-5A8B-411C-9402-B707F7675983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C11C61F8-5A8B-411C-9402-B707F7675983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C11C61F8-5A8B-411C-9402-B707F7675983}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,14 +10,7 @@ namespace ATZ.MVVM.Controls.Window
             Model = new WindowModel();
         }
 
-        public new WindowModel GetModel()
-        {
-            return (WindowModel) Model;
-        }
-
-        public void SetModel(WindowModel model)
-        {
-            Model = model;
-        }
+        public new WindowModel GetModel() => GetModel<WindowModel>();
+        public void SetModel(WindowModel model) => base.SetModel(model);
     }
 }

@@ -13,6 +13,13 @@ namespace ATZ.MVVM.Controls.FrameworkElement
         {
         }
 
+        // TODO: This should go into ATZ.MVVM.BaseViewModel if it works.
+        protected TModel GetModel<TModel>()
+            where TModel : class
+        {
+            return GetModel() as TModel;
+        }
+
         public override void UpdateValidity(object sender, EventArgs e)
         {
         }

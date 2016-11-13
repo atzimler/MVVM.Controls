@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C11C61F8-5A8B-411C-9402-B707F7675983}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ATZ.MVVM.Controls.Wpf.Tests</RootNamespace>
+    <AssemblyName>ATZ.MVVM.Controls.Wpf.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ATZ.DependencyInjection, Version=1.2.0.27094, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.DependencyInjection.1.2.0.27094\lib\net452\ATZ.DependencyInjection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ATZ.DependencyInjection.System, Version=1.2.0.27095, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.DependencyInjection.System.1.2.0.27095\lib\net452\ATZ.DependencyInjection.System.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ATZ.MVVM, Version=3.1.0.17585, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.MVVM.3.1.0.17585\lib\net452\ATZ.MVVM.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ATZ.MVVM.ViewModels.Utility, Version=3.1.0.17584, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.MVVM.3.1.0.17585\lib\net452\ATZ.MVVM.ViewModels.Utility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ATZ.MVVM.Views.Utility, Version=3.1.0.17585, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.MVVM.3.1.0.17585\lib\net452\ATZ.MVVM.Views.Utility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ATZ.Reflection, Version=1.2.0.14240, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.Reflection.1.2.0.14240\lib\net452\ATZ.Reflection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="WpfControlsShould.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ATZ.MVVM.Controls.Wpf\ATZ.MVVM.Controls.Wpf.csproj">
+      <Project>{edf10ecf-224b-48ce-80dc-a36e38b697fb}</Project>
+      <Name>ATZ.MVVM.Controls.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ATZ.MVVM.Controls\ATZ.MVVM.Controls.csproj">
+      <Project>{21308096-BD31-4AF2-B23C-0B2C0D2FDF09}</Project>
+      <Name>ATZ.MVVM.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -29,7 +29,11 @@ namespace ATZ.MVVM.Controls.Panel
 
         public void SetModel(PanelModel model)
         {
+            // TODO: To verify: Having model here might not be a good idea, maybe we should remove the Model property. That would force base.SetModel() and that in turn could assure that everybody do what is expected in that stage.
             Model = model;
+
+            // TODO: Is this enough, or should I somehow ModelCollection.Reset(), so that the reset event of the ObservableCollection is executed.?
+            Children.ModelCollection = model.Children;
         }
     }
 }

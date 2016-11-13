@@ -17,7 +17,8 @@ namespace ATZ.MVVM.Controls.StackPanel
 
         public void SetModel(StackPanelModel model)
         {
-            Model = model;
+            //Model = model;
+            base.SetModel(model);
         }
     }
 }
