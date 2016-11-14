@@ -52,6 +52,7 @@ namespace ATZ.MVVM.Controls.Wpf
             return ((WindowViewModel) vm).Content;
         }
 
+        // TODO: This should be in some helper class, because it is going to be needed by all ContentControl derived class.
         private void BindModelImplementation(IViewModel<WindowModel> viewModel)
         {
             var contentViewModel = GetContentViewModel(viewModel);
