@@ -11,6 +11,8 @@ using ATZ.MVVM.Views.Utility.Interfaces;
 using Ninject;
 using NUnit.Framework;
 using System.Windows.Controls;
+using ATZ.DependencyInjection.System;
+using Moq;
 
 namespace ATZ.MVVM.Controls.Wpf.Tests
 {
@@ -41,6 +43,41 @@ namespace ATZ.MVVM.Controls.Wpf.Tests
             stackPanelViewModel.Children.Add(textBoxViewModel);
 
             VerifyPanelChildrenCollection(textBoxViewModel.GetModel(), stackPanelViewModel);
+        }
+
+        [Test]
+        [Apartment(ApartmentState.STA)]
+        public void ProperlyBindTheContent()
+        {
+            var stackPanelViewModel = new StackPanelViewModel();
+            var windowViewModel = new WindowViewModel() { Content = stackPanelViewModel };
+            var window = DependencyResolver.Instance.Get<IModalWindow<WindowViewModel>>();
+
+            window.SetViewModel(windowViewModel);
+
+            Assert.IsNotNull(((WindowView)window).Content);
+        }
+
+
+        [Test]
+        [Apartment(ApartmentState.STA)]
+        public void WarnIfWindowContentViewCannotBeCreated()
+        {
+            var debugMock = new Mock<IDebug>();
+            // TODO: This should be verified but is not the actual error.
+            //debugMock.Setup(d => d.WriteLine("Failed to resolve binding of IView{StackPanelView}."));
+
+            DependencyResolver.Instance.Unbind<IDebug>();
+            DependencyResolver.Instance.Bind<IDebug>().ToConstant(debugMock.Object);
+
+            var stackPanelViewModel = new StackPanelViewModel();
+            var windowViewModel = new WindowViewModel() {Content = stackPanelViewModel};
+            var window = DependencyResolver.Instance.Get<IModalWindow<WindowViewModel>>();
+
+            window.SetViewModel(windowViewModel);
+
+            Assert.IsNull(((WindowView)window).Content);
+            debugMock.VerifyAll();
         }
 
         [Test]

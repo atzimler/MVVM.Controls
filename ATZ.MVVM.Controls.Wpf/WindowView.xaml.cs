@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using ATZ.DependencyInjection;
+using ATZ.DependencyInjection.System;
 using ATZ.MVVM.Controls.ContentControl;
 using ATZ.MVVM.Controls.FrameworkElement;
 using ATZ.MVVM.Controls.Window;
@@ -7,6 +8,8 @@ using ATZ.MVVM.ViewModels.Utility;
 using ATZ.MVVM.Views.Utility;
 using ATZ.MVVM.Views.Utility.Connectors;
 using ATZ.MVVM.Views.Utility.Interfaces;
+using ATZ.Reflection;
+using Ninject;
 
 namespace ATZ.MVVM.Controls.Wpf
 {
@@ -36,7 +39,12 @@ namespace ATZ.MVVM.Controls.Wpf
                 return null;
             }
 
-            return DependencyResolver.Instance.GetInterface<IView<IViewModel<FrameworkElementModel>>>(typeof(IView<>), contentViewModelType);
+            var contentView = DependencyResolver.Instance.GetInterface<IView<IViewModel<FrameworkElementModel>>>(typeof(IView<>), contentViewModelType);
+            if (contentView == null)
+            {
+                DependencyResolver.Instance.Get<IDebug>().WriteLine($"Failed to resolve binding of {typeof(IView<>).ParameterizedGenericName(contentViewModelType)}.");
+            }
+            return contentView;
         }
 
         private static FrameworkElementViewModel GetContentViewModel(IViewModel<WindowModel> vm)
@@ -48,6 +56,7 @@ namespace ATZ.MVVM.Controls.Wpf
         {
             var contentViewModel = GetContentViewModel(viewModel);
             var contentView = CreateContentView(contentViewModel);
+            Content = contentView;
 
             _contentConnector = new TContentConnector(
                 contentView,
