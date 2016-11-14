@@ -4,6 +4,16 @@ namespace ATZ.MVVM.Controls.ContentControl
 {
     public class ContentControlViewModel : FrameworkElementViewModel
     {
-        public FrameworkElementViewModel Content { get; set; }
+        private FrameworkElementViewModel _content;
+
+        public FrameworkElementViewModel Content
+        {
+            get { return _content; }
+            set
+            {
+                _content = value;
+                GetModel<ContentControlModel>().Content = value.Model;
+            }
+        }
     }
 }

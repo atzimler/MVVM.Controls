@@ -58,17 +58,16 @@ namespace ATZ.MVVM.Controls.Wpf.Tests
             // setting the VM of the View. Currently it does not seem to be in sync.
             var window = DependencyResolver.Instance.Get<IModalWindow<WindowViewModel>>();
             var windowViewModel = new WindowViewModel { Content = stackPanelViewModel };
-
+            Assert.AreSame(windowViewModel.GetModel().Content, stackPanelViewModel.GetModel());
             VerifyPanelChildrenCollection(textBoxModel, stackPanelViewModel);
-            // TODO: This somehow destroys the expectation of ProperlySetPanelChildrenModel() test. 
+
             window.SetViewModel(windowViewModel);
             VerifyPanelChildrenCollection(textBoxModel, stackPanelViewModel);
 
             // Model structure.
-            //Assert.AreSame(windowViewModel.GetModel().Content, stackPanelViewModel.Model);
-
             var stackPanelModel = stackPanelViewModel.GetModel();
             Assert.IsNotNull(stackPanelModel);
+            Assert.AreSame(windowViewModel.GetModel().Content, stackPanelViewModel.Model);
 
             var stackPanelChildren = stackPanelModel.Children;
             Assert.IsNotNull(stackPanelChildren);
@@ -77,11 +76,11 @@ namespace ATZ.MVVM.Controls.Wpf.Tests
             Assert.AreSame(textBoxViewModel.Model, stackPanelViewModel.GetModel().Children[0]);
 
             // ViewModel structure
-            //Assert.AreSame(window.GetViewModel(), windowViewModel);
-            //Assert.AreSame(windowViewModel.Content, stackPanelViewModel);
-            //Assert.AreEqual(1, stackPanelViewModel.Children.ViewModelCollection.Count);
-            //Assert.AreSame(textBoxViewModel, stackPanelViewModel.Children.ViewModelCollection[0]);
-
+            Assert.AreSame(window.GetViewModel(), windowViewModel);
+            Assert.AreSame(windowViewModel.Content, stackPanelViewModel);
+            Assert.AreEqual(1, stackPanelViewModel.Children.ViewModelCollection.Count);
+            Assert.AreSame(textBoxViewModel, stackPanelViewModel.Children.ViewModelCollection[0]);
+            Assert.AreSame(stackPanelViewModel, window.GetViewModel().Content);
 
         }
     }
