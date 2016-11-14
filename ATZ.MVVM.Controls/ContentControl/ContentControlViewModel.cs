@@ -1,8 +1,10 @@
-﻿using ATZ.MVVM.Controls.FrameworkElement;
+﻿using System;
+using ATZ.MVVM.Controls.FrameworkElement;
+using ATZ.MVVM.ViewModels.Utility;
 
 namespace ATZ.MVVM.Controls.ContentControl
 {
-    public class ContentControlViewModel : FrameworkElementViewModel
+    public class ContentControlViewModel : FrameworkElementViewModel, IViewModel<ContentControlModel>
     {
         private FrameworkElementViewModel _content;
 
@@ -15,5 +17,8 @@ namespace ATZ.MVVM.Controls.ContentControl
                 GetModel<ContentControlModel>().Content = value.Model;
             }
         }
+
+        public new ContentControlModel GetModel() => GetModel<ContentControlModel>();
+        public void SetModel(ContentControlModel model) => base.SetModel(model);
     }
 }

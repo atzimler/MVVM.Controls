@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using ATZ.DependencyInjection;
+using ATZ.MVVM.Controls.ContentControl;
 using ATZ.MVVM.Controls.FrameworkElement;
 using ATZ.MVVM.Controls.Window;
 using ATZ.MVVM.ViewModels.Utility;
@@ -14,7 +15,7 @@ namespace ATZ.MVVM.Controls.Wpf
     /// <summary>
     /// Interaction logic for WindowView.xaml
     /// </summary>
-    public partial class WindowView : IModalWindow<IViewModel<WindowModel>>
+    public partial class WindowView : IModalWindow<IViewModel<WindowModel>>, IView<IViewModel<ContentControlModel>>
     {
         private TContentConnector _contentConnector;
 
@@ -43,18 +44,21 @@ namespace ATZ.MVVM.Controls.Wpf
             return ((WindowViewModel) vm).Content;
         }
 
-        public void BindModel(IViewModel<WindowModel> viewModel)
+        private void BindModelImplementation(IViewModel<WindowModel> viewModel)
         {
             var contentViewModel = GetContentViewModel(viewModel);
             var contentView = CreateContentView(contentViewModel);
-            
+
             _contentConnector = new TContentConnector(
                 contentView,
                 viewModel,
                 GetContentViewModel,
                 vm => vm.GetModel().Content);
-
         }
+
+        public void BindModel(IViewModel<WindowModel> viewModel) => BindModelImplementation(viewModel);
+        public void BindModel(IViewModel<ContentControlModel> viewModel)
+            => BindModelImplementation((IViewModel<WindowModel>) viewModel);
 
         public void UnbindModel()
         {
