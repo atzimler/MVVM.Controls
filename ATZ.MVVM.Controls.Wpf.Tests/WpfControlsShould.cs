@@ -12,6 +12,7 @@ using Ninject;
 using NUnit.Framework;
 using System.Windows.Controls;
 using ATZ.DependencyInjection.System;
+using ATZ.MVVM.ViewModels.Utility;
 using Moq;
 
 namespace ATZ.MVVM.Controls.Wpf.Tests
@@ -30,6 +31,7 @@ namespace ATZ.MVVM.Controls.Wpf.Tests
         [SetUp]
         public void SetUp()
         {
+            DependencyResolver.Initialize();
             Bindings.Initialize();
         }
 
@@ -58,27 +60,6 @@ namespace ATZ.MVVM.Controls.Wpf.Tests
             Assert.IsNotNull(((WindowView)window).Content);
         }
 
-
-        [Test]
-        [Apartment(ApartmentState.STA)]
-        public void WarnIfWindowContentViewCannotBeCreated()
-        {
-            var debugMock = new Mock<IDebug>();
-            // TODO: This should be verified but is not the actual error.
-            //debugMock.Setup(d => d.WriteLine("Failed to resolve binding of IView{StackPanelView}."));
-
-            DependencyResolver.Instance.Unbind<IDebug>();
-            DependencyResolver.Instance.Bind<IDebug>().ToConstant(debugMock.Object);
-
-            var stackPanelViewModel = new StackPanelViewModel();
-            var windowViewModel = new WindowViewModel() {Content = stackPanelViewModel};
-            var window = DependencyResolver.Instance.Get<IModalWindow<WindowViewModel>>();
-
-            window.SetViewModel(windowViewModel);
-
-            Assert.IsNull(((WindowView)window).Content);
-            debugMock.VerifyAll();
-        }
 
         [Test]
         [Apartment(ApartmentState.STA)]

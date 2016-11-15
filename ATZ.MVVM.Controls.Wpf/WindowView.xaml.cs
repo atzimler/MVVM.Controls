@@ -39,12 +39,7 @@ namespace ATZ.MVVM.Controls.Wpf
                 return null;
             }
 
-            var contentView = DependencyResolver.Instance.GetInterface<IView<IViewModel<FrameworkElementModel>>>(typeof(IView<>), contentViewModelType);
-            if (contentView == null)
-            {
-                DependencyResolver.Instance.Get<IDebug>().WriteLine($"Failed to resolve binding of {typeof(IView<>).ParameterizedGenericName(contentViewModelType)}.");
-            }
-            return contentView;
+            return DependencyResolver.Instance.GetInterface<IView<IViewModel<FrameworkElementModel>>>(typeof(IView<>), contentViewModelType);
         }
 
         private static FrameworkElementViewModel GetContentViewModel(IViewModel<WindowModel> vm)
