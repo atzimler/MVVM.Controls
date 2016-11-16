@@ -84,6 +84,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StackPanel\StackPanelModel.cs" />
     <Compile Include="StackPanel\StackPanelViewModel.cs" />
+    <Compile Include="TextBlock\TextBlockModel.cs" />
+    <Compile Include="TextBlock\TextBlockViewModel.cs" />
     <Compile Include="TextBox\TextBoxModel.cs" />
     <Compile Include="TextBox\TextBoxViewModel.cs" />
     <Compile Include="Window\WindowModel.cs" />

@@ -5,6 +5,11 @@ namespace ATZ.MVVM.Controls.Button
 {
     public class ButtonViewModel : ContentControlViewModel, IViewModel<ButtonModel>
     {
+        public ButtonViewModel()
+        {
+            Model = new ButtonModel();
+        }
+
         public new ButtonModel GetModel() => GetModel<ButtonModel>();
         public void SetModel(ButtonModel model) => base.SetModel(model);
     }

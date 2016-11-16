@@ -8,6 +8,7 @@ using ATZ.MVVM.ViewModels.Utility;
 using ATZ.MVVM.Views.Utility.Interfaces;
 using System.Collections.Generic;
 using ATZ.MVVM.Controls.Button;
+using ATZ.MVVM.Controls.TextBlock;
 using ATZ.Reflection;
 
 namespace ATZ.MVVM.Controls.Wpf
@@ -24,6 +25,7 @@ namespace ATZ.MVVM.Controls.Wpf
         private static readonly Mvvm[] MvvmTriplets = {
             new Mvvm { Model = typeof(ButtonModel), View = typeof(ButtonView), ViewModel = typeof(ButtonViewModel) },
             new Mvvm { Model = typeof(StackPanelModel), View = typeof(StackPanelView), ViewModel = typeof(StackPanelViewModel) },
+            new Mvvm { Model = typeof(TextBlockModel), View = typeof(TextBlockView), ViewModel = typeof(TextBlockViewModel) },
             new Mvvm { Model = typeof(TextBoxModel), View = typeof(TextBoxView), ViewModel = typeof(TextBoxViewModel) }
         };
 

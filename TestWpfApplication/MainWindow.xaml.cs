@@ -2,6 +2,7 @@
 using ATZ.DependencyInjection;
 using ATZ.MVVM.Controls.Button;
 using ATZ.MVVM.Controls.StackPanel;
+using ATZ.MVVM.Controls.TextBlock;
 using ATZ.MVVM.Controls.TextBox;
 using ATZ.MVVM.Controls.Window;
 using ATZ.MVVM.Views.Utility;
@@ -27,7 +28,8 @@ namespace TestWpfApplication
             var username = new TextBoxViewModel();
             var password = new TextBoxViewModel();
 
-            var okButton = new ButtonViewModel();
+            // TODO: Not working correctly because of the TODO reason on WindowView.BindModelImplementation.
+            var okButton = new ButtonViewModel {Content = new TextBlockViewModel()};
 
             var buttonPanel = new StackPanelViewModel();
             buttonPanel.Children.Add(okButton);

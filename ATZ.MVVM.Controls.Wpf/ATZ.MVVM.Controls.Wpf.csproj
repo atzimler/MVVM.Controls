@@ -83,6 +83,9 @@
     <Compile Include="StackPanelView.xaml.cs">
       <DependentUpon>StackPanelView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TextBlockView.xaml.cs">
+      <DependentUpon>TextBlockView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TextBoxView.xaml.cs">
       <DependentUpon>TextBoxView.xaml</DependentUpon>
     </Compile>
@@ -109,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StackPanelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TextBlockView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
