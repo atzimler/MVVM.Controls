@@ -1,8 +1,6 @@
-﻿using System.Linq.Expressions;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 using ATZ.DependencyInjection;
-using ATZ.MVVM.Controls.DockPanel;
+using ATZ.MVVM.Controls.Button;
 using ATZ.MVVM.Controls.StackPanel;
 using ATZ.MVVM.Controls.TextBox;
 using ATZ.MVVM.Controls.Window;
@@ -26,17 +24,21 @@ namespace TestWpfApplication
 
         private void OnButtonClicked(object sender, RoutedEventArgs e)
         {
+            var username = new TextBoxViewModel();
+            var password = new TextBoxViewModel();
 
-            // TODO: This now works, except that it is rendered in size (0,0) because how the content is placed on the window. Probably need some additional features.
-            var textBoxViewModel = new TextBoxViewModel();
-            var stackPanelViewModel = new StackPanelViewModel();
+            var okButton = new ButtonViewModel();
 
-            stackPanelViewModel.Children.Add(textBoxViewModel);
+            var buttonPanel = new StackPanelViewModel();
+            buttonPanel.Children.Add(okButton);
 
-            // TODO: Verify that the Model, View and ViewModel structures are in sync after setting the Content of the VM (in that case just the M and VM structures) and after
-            // setting the VM of the View. Currently it does not seem to be in sync.
+            var contentPanel = new StackPanelViewModel();
+            contentPanel.Children.Add(username);
+            contentPanel.Children.Add(password);
+            contentPanel.Children.Add(buttonPanel);
+
             var window = DependencyResolver.Instance.Get<IModalWindow<WindowViewModel>>();
-            var windowViewModel = new WindowViewModel { Content = stackPanelViewModel };
+            var windowViewModel = new WindowViewModel { Content = contentPanel };
             window.SetViewModel(windowViewModel);
 
             window.ShowDialog();

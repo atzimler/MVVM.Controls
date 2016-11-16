@@ -69,6 +69,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Button\ButtonModel.cs" />
+    <Compile Include="Button\ButtonViewModel.cs" />
     <Compile Include="ContentControl\ContentControlModel.cs" />
     <Compile Include="ContentControl\ContentControlViewModel.cs" />
     <Compile Include="Control\ControlModel.cs" />
