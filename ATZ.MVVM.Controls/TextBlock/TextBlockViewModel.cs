@@ -5,9 +5,16 @@ namespace ATZ.MVVM.Controls.TextBlock
 {
     public class TextBlockViewModel : FrameworkElementViewModel, IViewModel<TextBlockModel>
     {
+        // ReSharper disable once MemberCanBePrivate.Global => Part of public API.
         public TextBlockViewModel()
         {
             Model = new TextBlockModel();
+        }
+
+        public TextBlockViewModel(string text)
+            : this()
+        {
+            GetModel().Text = text;
         }
 
         public new TextBlockModel GetModel() => GetModel<TextBlockModel>();

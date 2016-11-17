@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ATZ.MVVM.Controls.FrameworkElement;
 using ATZ.MVVM.Controls.TextBlock;
 using ATZ.MVVM.ViewModels.Utility;
@@ -33,6 +21,8 @@ namespace ATZ.MVVM.Controls.Wpf
 
         private void BindModelImplementation(IViewModel<TextBlockModel> vm)
         {
+            BindingOperations.SetBinding(this, TextProperty,
+                new Binding(nameof(Text)) {Mode = BindingMode.OneWay, Source = vm.GetModel()});
         }
 
         public void BindModel(IViewModel<TextBlockModel> vm) => BindModelImplementation(vm);

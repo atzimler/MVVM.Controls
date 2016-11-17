@@ -28,8 +28,7 @@ namespace TestWpfApplication
             var username = new TextBoxViewModel();
             var password = new TextBoxViewModel();
 
-            // TODO: Not working correctly because of the TODO reason on WindowView.BindModelImplementation.
-            var okButton = new ButtonViewModel {Content = new TextBlockViewModel()};
+            var okButton = new ButtonViewModel {Content = new TextBlockViewModel("YYY")};
 
             var buttonPanel = new StackPanelViewModel();
             buttonPanel.Children.Add(okButton);
