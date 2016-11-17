@@ -76,6 +76,8 @@
     <Compile Include="ButtonView.xaml.cs">
       <DependentUpon>ButtonView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContentConnector.cs" />
+    <Compile Include="ContentControlViewHelper.cs" />
     <Compile Include="DockPanelView.xaml.cs">
       <DependentUpon>DockPanelView.xaml</DependentUpon>
     </Compile>

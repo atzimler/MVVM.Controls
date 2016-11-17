@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using ATZ.DependencyInjection;
 using ATZ.DependencyInjection.System;
 using ATZ.MVVM.Controls.ContentControl;
 using ATZ.MVVM.Controls.FrameworkElement;
@@ -13,14 +12,12 @@ using Ninject;
 
 namespace ATZ.MVVM.Controls.Wpf
 {
-    using TContentConnector = CompositeViewToViewModelConnector<WindowModel, WindowView,FrameworkElementModel, IView<IViewModel<FrameworkElementModel>>>;
-
     /// <summary>
     /// Interaction logic for WindowView.xaml
     /// </summary>
     public partial class WindowView : IModalWindow<IViewModel<WindowModel>>, IView<IViewModel<ContentControlModel>>
     {
-        private TContentConnector _contentConnector;
+        private ContentConnector _contentConnector;
 
         public UIElement UIElement => this;
 
@@ -31,34 +28,9 @@ namespace ATZ.MVVM.Controls.Wpf
             this.SetViewModel(new WindowViewModel());
         }
 
-        private IView<IViewModel<FrameworkElementModel>> CreateContentView(FrameworkElementViewModel contentViewModel)
-        {
-            var contentViewModelType = contentViewModel?.GetType();
-            if (contentViewModelType == null)
-            {
-                return null;
-            }
-
-            return DependencyResolver.Instance.GetInterface<IView<IViewModel<FrameworkElementModel>>>(typeof(IView<>), contentViewModelType);
-        }
-
-        private static FrameworkElementViewModel GetContentViewModel(IViewModel<WindowModel> vm)
-        {
-            return ((WindowViewModel) vm).Content;
-        }
-
-        // TODO: This should be in some helper class, because it is going to be needed by all ContentControl derived class.
         private void BindModelImplementation(IViewModel<WindowModel> viewModel)
         {
-            var contentViewModel = GetContentViewModel(viewModel);
-            var contentView = CreateContentView(contentViewModel);
-            Content = contentView;
-
-            _contentConnector = new TContentConnector(
-                contentView,
-                viewModel,
-                GetContentViewModel,
-                vm => vm.GetModel().Content);
+            ContentControlViewHelper.BindModel(this, (ContentControlViewModel)viewModel, ref _contentConnector);
         }
 
         public void BindModel(IViewModel<WindowModel> viewModel) => BindModelImplementation(viewModel);
