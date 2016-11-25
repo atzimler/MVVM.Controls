@@ -32,11 +32,18 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
 
 // Allow Wpf controls to access the information necessary to bind the component view models to the component views.
 // While these need to be access by the appropriate views, they should not be part of the public API and as a result,
 // they are marked as being internal. The reason why Wpf is not in the same DLL is that this will allow us to
 // implement different UI control sets with reusing the Model and ViewModel codes.
 [assembly: InternalsVisibleTo("ATZ.MVVM.Controls.Wpf")]
+
+// Semantic versioning - from http://semver.org
+// Summary
+//Given a version number MAJOR.MINOR.PATCH, increment the:
+//MAJOR version when you make incompatible API changes,
+//MINOR version when you add functionality in a backwards-compatible manner, and
+//PATCH version when you make backwards-compatible fixes.
+//Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+[assembly: AssemblyVersion("1.0.0.*")]

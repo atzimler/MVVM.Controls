@@ -96,6 +96,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ATZ.MVVM.Controls.Wpf.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
