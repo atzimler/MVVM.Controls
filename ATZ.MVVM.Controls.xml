@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project name="ATZ.Reflection" default="help">
+  <description>Build file for ATZ.MVVM.Controls library.</description>
+
+  <property name="project.name" value="ATZ.MVVM.Controls" />
+  <include buildfile="../NAnt/ATZ.Build.xml" />
+</project>
