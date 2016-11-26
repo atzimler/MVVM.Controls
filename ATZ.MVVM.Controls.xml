@@ -2,6 +2,6 @@
 <project name="ATZ.MVVM.Controls" default="help">
   <description>Build file for ATZ.MVVM.Controls library.</description>
 
-  <property name="project.name" value="ATZ.MVVM.Controls" />
+  <property name="project.name" value="MVVM.Controls" />
   <include buildfile="../NAnt/ATZ.Build.xml" />
 </project>
