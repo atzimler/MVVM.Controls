@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using ATZ.DependencyInjection;
 using ATZ.MVVM.Controls.Button;
+using ATZ.MVVM.Controls.ListView;
 using ATZ.MVVM.Controls.StackPanel;
 using ATZ.MVVM.Controls.TextBlock;
 using ATZ.MVVM.Controls.TextBox;
@@ -23,7 +24,7 @@ namespace TestWpfApplication
             ATZ.MVVM.Controls.Wpf.Bindings.Initialize();
         }
 
-        private void OnButtonClicked(object sender, RoutedEventArgs e)
+        private void OnShowDialogButtonClicked(object sender, RoutedEventArgs e)
         {
             var username = new TextBoxViewModel();
             var password = new TextBoxViewModel();
@@ -40,6 +41,16 @@ namespace TestWpfApplication
 
             var window = DependencyResolver.Instance.Get<IModalWindow<WindowViewModel>>();
             var windowViewModel = new WindowViewModel { Content = contentPanel };
+            window.SetViewModel(windowViewModel);
+
+            window.ShowDialog();
+        }
+
+        private void OnShowListViewButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var list = new ListViewViewModel();
+            var window = DependencyResolver.Instance.Get<IModalWindow<WindowViewModel>>();
+            var windowViewModel = new WindowViewModel { Content = list };
             window.SetViewModel(windowViewModel);
 
             window.ShowDialog();
