@@ -30,33 +30,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ATZ.DependencyInjection, Version=1.2.2.14255, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ATZ.DependencyInjection.1.2.2.14255\lib\net452\ATZ.DependencyInjection.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ATZ.DependencyInjection, Version=1.3.2.48, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.DependencyInjection.System.1.3.2.48\lib\net452\ATZ.DependencyInjection.dll</HintPath>
     </Reference>
-    <Reference Include="ATZ.DependencyInjection.System, Version=1.2.2.14256, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ATZ.DependencyInjection.System.1.2.2.14256\lib\net452\ATZ.DependencyInjection.System.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ATZ.DependencyInjection.System, Version=1.3.2.48, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.DependencyInjection.System.1.3.2.48\lib\net452\ATZ.DependencyInjection.System.dll</HintPath>
     </Reference>
-    <Reference Include="ATZ.MVVM, Version=3.2.0.17893, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ATZ.MVVM.3.2.0.17893\lib\net452\ATZ.MVVM.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ATZ.MVVM, Version=3.4.0.119, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.MVVM.3.4.0.119\lib\net452\ATZ.MVVM.dll</HintPath>
     </Reference>
-    <Reference Include="ATZ.MVVM.ViewModels.Utility, Version=3.2.0.17724, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ATZ.MVVM.3.2.0.17893\lib\net452\ATZ.MVVM.ViewModels.Utility.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ATZ.MVVM.ViewModels.Utility, Version=3.4.0.119, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.MVVM.3.4.0.119\lib\net452\ATZ.MVVM.ViewModels.Utility.dll</HintPath>
     </Reference>
-    <Reference Include="ATZ.MVVM.Views.Utility, Version=3.2.0.17893, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ATZ.MVVM.3.2.0.17893\lib\net452\ATZ.MVVM.Views.Utility.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ATZ.MVVM.Views.Utility, Version=3.4.0.119, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.MVVM.3.4.0.119\lib\net452\ATZ.MVVM.Views.Utility.dll</HintPath>
     </Reference>
-    <Reference Include="ATZ.Reflection, Version=1.2.0.14240, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ATZ.Reflection.1.2.0.14240\lib\net452\ATZ.Reflection.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ATZ.Reflection, Version=1.3.0.9728, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ATZ.DependencyInjection.System.1.3.2.48\lib\net452\ATZ.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\ATZ.DependencyInjection.System.1.3.2.48\lib\net452\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -80,6 +73,9 @@
     <Compile Include="ContentControlViewHelper.cs" />
     <Compile Include="DockPanelView.xaml.cs">
       <DependentUpon>DockPanelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewView.xaml.cs">
+      <DependentUpon>ListViewView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StackPanelView.xaml.cs">
@@ -111,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DockPanelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListViewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
