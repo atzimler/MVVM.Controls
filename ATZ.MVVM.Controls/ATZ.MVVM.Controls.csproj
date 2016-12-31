@@ -79,6 +79,8 @@
     <Compile Include="DockPanel\DockPanelViewModel.cs" />
     <Compile Include="FrameworkElement\FrameworkElementModel.cs" />
     <Compile Include="FrameworkElement\FrameworkElementViewModel.cs" />
+    <Compile Include="ItemsControl\ItemsControlModel.cs" />
+    <Compile Include="ItemsControl\ItemsControlViewModel.cs" />
     <Compile Include="Panel\PanelModel.cs" />
     <Compile Include="Panel\PanelViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +99,7 @@
   <ItemGroup>
     <None Include="ATZ.MVVM.Controls.nuspec" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
