@@ -4,6 +4,7 @@ using ATZ.MVVM.Controls.ListView;
 using ATZ.MVVM.Controls.StackPanel;
 using ATZ.MVVM.Controls.TextBlock;
 using ATZ.MVVM.Controls.TextBox;
+using ATZ.MVVM.Controls.TreeView;
 using ATZ.MVVM.Controls.Window;
 using ATZ.MVVM.Views.Utility;
 using ATZ.MVVM.Views.Utility.Interfaces;
@@ -54,6 +55,20 @@ namespace TestWpfApplication
             window.SetViewModel(windowViewModel);
 
             list.GetModel().Items.Add(new TextBlockModel { Text = "XXX" });
+
+            window.ShowDialog();
+        }
+
+        private void OnShowTreeViewButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var tree = new TreeViewViewModel();
+            var window = DependencyResolver.Instance.Get<IModalWindow<WindowViewModel>>();
+            var windowViewModel = new WindowViewModel { Content = tree };
+            window.SetViewModel(windowViewModel);
+
+            tree.GetModel().Items.Add(new TextBlockModel { Text = "TopLevel1" });
+            tree.GetModel().Items.Add(new TextBlockModel { Text = "TopLevel2" });
+            //tree.GetModel().Items[0].Items.Add(new TextBlockModel { Text = "SubNode 1.1" });
 
             window.ShowDialog();
         }

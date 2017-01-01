@@ -9,10 +9,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Button Grid.Row="0" Grid.Column="0" Click="OnShowDialogButtonClicked">Show Dialog</Button>
         <Button Grid.Row="1" Grid.Column="0" Click="OnShowListViewButtonClicked">Show ListView</Button>
+        <Button Grid.Row="2" Grid.Column="0" Click="OnShowTreeViewButtonClicked">Show TreeView</Button>
     </Grid>
 </Window>
 

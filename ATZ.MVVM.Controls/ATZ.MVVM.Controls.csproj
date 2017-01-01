@@ -89,6 +89,8 @@
     <Compile Include="TextBlock\TextBlockViewModel.cs" />
     <Compile Include="TextBox\TextBoxModel.cs" />
     <Compile Include="TextBox\TextBoxViewModel.cs" />
+    <Compile Include="TreeView\TreeViewModel.cs" />
+    <Compile Include="TreeView\TreeViewViewModel.cs" />
     <Compile Include="Window\WindowModel.cs" />
     <Compile Include="Window\WindowViewModel.cs" />
   </ItemGroup>
