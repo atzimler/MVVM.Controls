@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using ATZ.DependencyInjection;
+﻿using ATZ.DependencyInjection;
 using ATZ.MVVM.Controls.Button;
 using ATZ.MVVM.Controls.ListView;
 using ATZ.MVVM.Controls.StackPanel;
@@ -9,6 +8,7 @@ using ATZ.MVVM.Controls.Window;
 using ATZ.MVVM.Views.Utility;
 using ATZ.MVVM.Views.Utility.Interfaces;
 using Ninject;
+using System.Windows;
 
 namespace TestWpfApplication
 {
@@ -29,7 +29,7 @@ namespace TestWpfApplication
             var username = new TextBoxViewModel();
             var password = new TextBoxViewModel();
 
-            var okButton = new ButtonViewModel {Content = new TextBlockViewModel("YYY")};
+            var okButton = new ButtonViewModel { Content = new TextBlockViewModel("YYY") };
 
             var buttonPanel = new StackPanelViewModel();
             buttonPanel.Children.Add(okButton);
@@ -52,6 +52,8 @@ namespace TestWpfApplication
             var window = DependencyResolver.Instance.Get<IModalWindow<WindowViewModel>>();
             var windowViewModel = new WindowViewModel { Content = list };
             window.SetViewModel(windowViewModel);
+
+            list.GetModel().Items.Add(new TextBlockModel { Text = "XXX" });
 
             window.ShowDialog();
         }

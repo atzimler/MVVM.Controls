@@ -5,6 +5,7 @@ using ATZ.MVVM.Controls.Window;
 using ATZ.MVVM.Views.Utility.Interfaces;
 using System.Linq;
 using ATZ.MVVM.Controls.Button;
+using ATZ.MVVM.Controls.ListView;
 using ATZ.MVVM.Controls.TextBlock;
 using ATZ.MVVM.Views.Utility;
 
@@ -16,7 +17,8 @@ namespace ATZ.MVVM.Controls.Wpf
             new MvvmTuple { Model = typeof(ButtonModel), View = typeof(ButtonView), ViewModel = typeof(ButtonViewModel) },
             new MvvmTuple { Model = typeof(StackPanelModel), View = typeof(StackPanelView), ViewModel = typeof(StackPanelViewModel) },
             new MvvmTuple { Model = typeof(TextBlockModel), View = typeof(TextBlockView), ViewModel = typeof(TextBlockViewModel) },
-            new MvvmTuple { Model = typeof(TextBoxModel), View = typeof(TextBoxView), ViewModel = typeof(TextBoxViewModel) }
+            new MvvmTuple { Model = typeof(TextBoxModel), View = typeof(TextBoxView), ViewModel = typeof(TextBoxViewModel) },
+            new MvvmTuple { Model = typeof(ListViewModel), View = typeof(ListViewView), ViewModel = typeof(ListViewViewModel) }
         };
 
         public static void Initialize()
