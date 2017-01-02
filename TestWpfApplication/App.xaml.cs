@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace TestWpfApplication
+﻿namespace TestWpfApplication
 {
     /// <summary>
     /// Interaction logic for App.xaml

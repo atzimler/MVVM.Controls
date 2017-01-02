@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading;
-using ATZ.DependencyInjection;
+﻿using ATZ.DependencyInjection;
 using ATZ.MVVM.Controls.FrameworkElement;
 using ATZ.MVVM.Controls.Panel;
 using ATZ.MVVM.Controls.StackPanel;
@@ -10,10 +8,7 @@ using ATZ.MVVM.Views.Utility;
 using ATZ.MVVM.Views.Utility.Interfaces;
 using Ninject;
 using NUnit.Framework;
-using System.Windows.Controls;
-using ATZ.DependencyInjection.System;
-using ATZ.MVVM.ViewModels.Utility;
-using Moq;
+using System.Threading;
 
 namespace ATZ.MVVM.Controls.Wpf.Tests
 {

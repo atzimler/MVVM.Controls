@@ -1,14 +1,9 @@
-﻿using System.Windows;
-using ATZ.DependencyInjection.System;
-using ATZ.MVVM.Controls.ContentControl;
-using ATZ.MVVM.Controls.FrameworkElement;
+﻿using ATZ.MVVM.Controls.ContentControl;
 using ATZ.MVVM.Controls.Window;
 using ATZ.MVVM.ViewModels.Utility;
 using ATZ.MVVM.Views.Utility;
-using ATZ.MVVM.Views.Utility.Connectors;
 using ATZ.MVVM.Views.Utility.Interfaces;
-using ATZ.Reflection;
-using Ninject;
+using System.Windows;
 
 namespace ATZ.MVVM.Controls.Wpf
 {
@@ -35,7 +30,7 @@ namespace ATZ.MVVM.Controls.Wpf
 
         public void BindModel(IViewModel<WindowModel> viewModel) => BindModelImplementation(viewModel);
         public void BindModel(IViewModel<ContentControlModel> viewModel)
-            => BindModelImplementation((IViewModel<WindowModel>) viewModel);
+            => BindModelImplementation((IViewModel<WindowModel>)viewModel);
 
         public void UnbindModel()
         {

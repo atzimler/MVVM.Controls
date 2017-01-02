@@ -1,5 +1,4 @@
-﻿using System;
-using ATZ.MVVM.Controls.FrameworkElement;
+﻿using ATZ.MVVM.Controls.FrameworkElement;
 using ATZ.MVVM.ViewModels.Utility;
 
 namespace ATZ.MVVM.Controls.ContentControl
